@@ -6,7 +6,7 @@ import {
     useParams
   } from "react-router-dom";
 import styled, {createGlobalStyle} from 'styled-components';
-import { PostGrid, InfoGrid} from './PostGrid';
+import { PostGrid, InfoGrid, ImageGrid} from './PostGrid';
 import {MiniUserGrid} from '../Profile/UserGrid';
 import {ProfileImage} from '../Profile/ProfileImage';
 
@@ -14,15 +14,16 @@ const ModalStyled = styled.div`
     position: absolute;
     background: #fff;
     top: ${({top}) => top}px; //
+    height: 70vh;
     left: 15%;
     right: 15%;
     padding: 15px;
-    height: 50vh;
     border: 2px solid #444;
     @media (max-width: 990px){
       left: 0;
       right: 0;
       top: ${({top}) => top}px;
+      height: 80vh;
       width: auto;
   }
     
@@ -60,12 +61,13 @@ export function Modal() {
         }}
       >
         <ModalStyled
-            top={window.scrollY + (window.innerHeight/2) - 250}
+            top={window.scrollY + (window.innerHeight/10)}
         >
         <OverflowHidden />
-
         <PostGrid>
-          <Image isModal index={image.id} />
+          <ImageGrid>
+            <Image isModal index={image.id} />
+          </ImageGrid>
           <InfoGrid>
             <div style={{display: "flex"}}>
               <ProfileImage mini />
@@ -79,7 +81,7 @@ export function Modal() {
               <h1 style={{marginBottom: 15}}>{image.title}</h1>
               {image.description}
             </p>
-            <div>45 Likes</div>
+            <div></div>
           </InfoGrid>
         </PostGrid>
         </ModalStyled>

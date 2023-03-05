@@ -35,7 +35,8 @@ const PhotoGrid = styled.div`
   `}
   @media (max-width: 990px){
     gap: 5px;
-    padding-left: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: calc(33vw - 10px);
     }

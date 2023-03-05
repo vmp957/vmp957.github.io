@@ -56,7 +56,7 @@ function ModalSwitch() {
 export const Image = styled.div`
   width: 100%;
   height: 100%;
-  background: no-repeat center/150% url(/img/${({index}) => index}.jpeg);
+  background: no-repeat center/100% url(/img/${({index}) => index}.jpeg);
   ${({isModal}) => !isModal && css`
     :hover {
       opacity: .7
@@ -64,8 +64,8 @@ export const Image = styled.div`
   `}
   @media (max-width: 990px){
     width: 100%;
+    height: 100%;
   } 
-
 `;
 
 

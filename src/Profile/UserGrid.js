@@ -14,9 +14,11 @@ const UserGridStyled = styled.div`
                          "photo description"
                          "photo .";
     @media (max-width: 990px){
-        grid-template-areas: "photo name"
-                                "label ."
-                                "description .";
+        grid-template-areas: "photo ."
+                             "photo name"
+                             "photo label"
+                             "photo ."
+                             "description .";
     }
 `;
 
@@ -40,7 +42,7 @@ const Name = styled.div`
 const Label = styled.div`
     grid-area: label;
     @media (max-width: 990px){
-        padding-left: 25px;
+        padding-left: 0px;
     }
 `;
 
